@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\github\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj": {}
+    "C:\\Users\\diego\\Source\\Repos\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj": {}
   },
   "projects": {
-    "C:\\github\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj": {
+    "C:\\Users\\diego\\Source\\Repos\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\github\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj",
+        "projectUniqueName": "C:\\Users\\diego\\Source\\Repos\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj",
         "projectName": "CasoEstudio2G4",
-        "projectPath": "C:\\github\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj",
-        "packagesPath": "C:\\Users\\cgtro\\.nuget\\packages\\",
-        "outputPath": "C:\\github\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\obj\\",
+        "projectPath": "C:\\Users\\diego\\Source\\Repos\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4.csproj",
+        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\diego\\Source\\Repos\\CasoEstudio2G4\\CasoEstudio2G4\\CasoEstudio2G4\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cgtro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +38,27 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

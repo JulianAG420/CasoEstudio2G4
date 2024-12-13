@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Alquilar Casa";
+    var casasDisponibles = ViewBag.CasasDisponibles as List<CasoEstudio2.Models.CasasModel>;
+}
+
+<h1 class="text-center">Alquilar Casa</h1>
+
+<div class="d-flex justify-content-center mt-4">
+    <div class="card p-4" style="width: 400px;">
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Error"]
+            </div>
+        }
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Success"]
+            </div>
+        }
+
+        <form asp-action="Alquilar" method="post">
+            <div class="form-group">
+                <label for="IdCasa">Casa</label>
+                <select id="IdCasa" name="idCasa" class="form-control" required>
+                    <option value="">Seleccione una casa</option>
+                    @foreach (var casa in casasDisponibles)
+                    {
+                        <option value="@casa.IdCasa" data-precio="@casa.PrecioCasa">
+                            @casa.DescripcionCasa
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="PrecioCasa">Precio Mensual</label>
+                <input type="text" id="PrecioCasa" name="precioCasa" class="form-control" readonly />
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="UsuarioAlquiler">Usuario</label>
+                <input type="text" id="UsuarioAlquiler" name="usuarioAlquiler" class="form-control" required />
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Alquilar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Actualizar el precio cuando se seleccione una casa
+    document.getElementById('IdCasa').addEventListener('change', function () {
+        const selectedOption = this.options[this.selectedIndex];
+        const precio = selectedOption.getAttribute('data-precio');
+        document.getElementById('PrecioCasa').value = precio || '';
+    });
+</script>

@@ -18,6 +18,11 @@ namespace CasoEstudio2G4.Controllers
             return View();
         }
 
+        public IActionResult Consulta()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
