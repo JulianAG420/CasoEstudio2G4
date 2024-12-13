@@ -1,0 +1,61 @@
+
+CREATE DATABASE CasoEstudioJN;
+GO
+
+
+USE CasoEstudioJN;
+GO
+
+
+CREATE TABLE CasasSistema (
+    IdCasa BIGINT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    DescripcionCasa VARCHAR(30) NOT NULL,
+    PrecioCasa DECIMAL(10,2) NOT NULL,
+    UsuarioAlquiler VARCHAR(30) NULL,
+    FechaAlquiler DATETIME NULL
+);
+GO
+
+
+INSERT INTO CasasSistema (DescripcionCasa, PrecioCasa, UsuarioAlquiler, FechaAlquiler)
+VALUES 
+('Casa en San José', 190000, NULL, NULL),
+('Casa en Alajuela', 145000, NULL, NULL),
+('Casa en Cartago', 115000, NULL, NULL),
+('Casa en Heredia', 122000, NULL, NULL),
+('Casa en Guanacaste', 105000, NULL, NULL);
+GO
+
+CREATE PROCEDURE ConsultarCasas
+AS
+BEGIN
+    SELECT 
+        DescripcionCasa,
+        PrecioCasa,
+        ISNULL(UsuarioAlquiler, 'Disponible') AS Estado,
+        CASE WHEN UsuarioAlquiler IS NULL THEN 'Disponible' ELSE 'Reservada' END AS EstadoCasa,
+        FORMAT(FechaAlquiler, 'dd/MM/yyyy') AS FechaAlquiler
+    FROM CasasSistema
+    WHERE PrecioCasa BETWEEN 115000 AND 180000
+    ORDER BY EstadoCasa;
+END;
+GO
+
+
+CREATE PROCEDURE AlquilarCasa
+    @IdCasa BIGINT,
+    @UsuarioAlquiler VARCHAR(30),
+    @FechaAlquiler DATETIME
+AS
+BEGIN
+    UPDATE CasasSistema
+    SET UsuarioAlquiler = @UsuarioAlquiler,
+        FechaAlquiler = @FechaAlquiler
+    WHERE IdCasa = @IdCasa AND UsuarioAlquiler IS NULL;
+
+    IF @@ROWCOUNT = 0
+    BEGIN
+        THROW 50000, 'La casa seleccionada ya está alquilada o no existe.', 1;
+    END
+END;
+GO
