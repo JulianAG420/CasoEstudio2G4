@@ -1,0 +1,10 @@
+# Archivos y carpetas temporales
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Archivos del sistema
+Thumbs.db
+*.log
