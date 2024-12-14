@@ -2,17 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido</h1>
-    <p>Seleccione una opción para continuar:</p>
+<link rel="stylesheet" href="~/lib/index_style.css" asp-append-version="true" />
 
-    <div class="mt-4">
-      
-        <a class="btn btn-primary btn-lg" asp-controller="Casas" asp-action="Consulta">
+
+<div class="home-container text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    <p class="lead">Seleccione una opción para continuar:</p>
+
+    <div class="btn-container mt-4">
+        <a class="btn btn-primary btn-lg" asp-controller="Casas" asp-action="Consulta" aria-label="Consultar Casas">
             Consultar Casas
         </a>
-
-        <a class="btn btn-primary btn-lg ml-3" asp-controller="Casas" asp-action="Alquilar">
+        <a class="btn btn-primary btn-lg ml-3" asp-controller="Casas" asp-action="Alquilar" aria-label="Alquilar Casa">
             Alquilar Casa
         </a>
     </div>

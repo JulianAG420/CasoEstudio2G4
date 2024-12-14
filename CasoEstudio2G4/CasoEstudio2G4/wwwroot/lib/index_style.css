@@ -1,0 +1,25 @@
+﻿
+.btn-container a {
+    text-decoration: none;
+    border-radius: 5px; 
+    transition: all 0.3s ease; 
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; 
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.btn-container .ml-3 {
+    margin-left: 20px;
+}

@@ -1,0 +1,52 @@
+﻿h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .card .form-group label {
+        font-size: 1.6rem;
+        color: black;
+        padding: 10px;
+    }
+
+    .card .form-control {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+
+    .card .btn-primary {
+        border-color: #007bff;
+        font-size: 1.4rem;
+        padding: 12px 20px;
+        border-radius: 5px;
+    }
+
+        .card .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .card .alert {
+        margin-bottom: 20px;
+    }
+
+    .card .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+
+    .card .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }

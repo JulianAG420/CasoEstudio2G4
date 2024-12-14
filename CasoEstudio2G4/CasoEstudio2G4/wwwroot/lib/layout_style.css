@@ -1,0 +1,79 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+
+.navbar, .btn-container a {
+    position: relative; /* Asegura que estos elementos se muestren por encima de otros */
+    z-index: 10; /* Prioridad en la capa */
+}
+
+
+.nav-item a {
+    color: black;
+    font-size: 22px;
+}
+
+.nav-item {
+    margin: 0 30px; /* Ajusta 15px a ambos lados de cada elemento del nav */
+}
+
+body {
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size: cover;
+    color: black;
+    -webkit-animation: slidein 100s;
+    animation: slidein 100s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+@keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(75, 75, 250, 0.3);
+    border-radius: 3px;
+    z-index: -1;
+}
+
+    .center h1 {
+        text-align: center;
+        color: white;
+        font-family: 'Source Code Pro', monospace;
+        text-transform: uppercase;
+    }
